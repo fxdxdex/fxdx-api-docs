@@ -29,7 +29,7 @@ Endpoint provides a summary of every single contract traded on the exchange. Des
 | product_type                | Type of derivative                                                                                      |
 | index_name                  | Name of the index asset                                                                                 |
 | index_currency              | Index currency used to price the asset                                                                  |
-| start_timestamp             | End date of derivative                                                                                  |
+| creation_timestamp             | End date of derivative                                                                                  |
 | contract_type               | Describes the type of contract - Vanilla, Inverse or Quanto?                                            |
 | contract_price_currency     | Describes the currency which the contract is priced in (e.g. USD, EUR, BTC, USDT)                       |
 | quote_currency              | Symbol/currency code of quote pair, eg. ETH                                                             |
