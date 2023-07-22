@@ -212,7 +212,7 @@ Provide order book information with at least depth = 100 (50 each side) returned
             ],
             [
                 "1737.715",
-                "0.183995840185854929
+                "0.183995840185854929"
             ],
             [
                 "1736.151",
