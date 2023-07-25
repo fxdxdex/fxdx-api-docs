@@ -1,6 +1,6 @@
 # FXDX Market Information API
 
-### The following documentation provides information about the FXDX Market Information API, which can be used to get price,orderbook,volume etc..
+### The following documentation provides information about the FXDX Market Information API, which can be used to get price, orderbook, volume, etc.
 
 ## Authentication
 
@@ -12,26 +12,26 @@ https://api.optimism.fxdx.exchange/cmc/
 
 ## Endpoints
 
-### `GET /Contracts`
+### `GET /contracts`
 
 Endpoint provides a summary of every single contract traded on the exchange. Describes the specification of the contracts, mainly the pricing of the contract and its type (vanilla, inverse, or quanto)
 
 #### Parameters
+No query or route parameters.
+#### Response
 
-### Response
-
-- Response Parameter
+- Response Body Fields
 
 | Name                        | Description                                                                                             |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
-| ticker_id                   | Identifier of a ticker with delimiter to separate base/quote, eg. BTC-PERPUSD, BTC-PERPETH, BTC-PERPEUR |
+| ticker_id                   | Identifier of a ticker with delimiter to separate base/quote, eg. BTC-PERP, ETH-PERP. |
 | base_currency               | Symbol/currency code of base pair, eg. BTC                                                              |
 | product_type                | Type of derivative                                                                                      |
 | index_name                  | Name of the index asset                                                                                 |
 | index_currency              | Index currency used to price the asset                                                                  |
-| creation_timestamp             | End date of derivative                                                                                  |
-| contract_type               | Describes the type of contract - Vanilla, Inverse or Quanto?                                            |
-| contract_price_currency     | Describes the currency which the contract is priced in (e.g. USD, EUR, BTC, USDT)                       |
+| creation_timestamp             | Start date of derivative                                                                                  |
+| contract_type               | Describes the type of contract - Vanilla, Inverse or Quanto                                            |
+| contract_price_currency     | Describes the currency which the contract is priced in (e.g. USDT)                       |
 | quote_currency              | Symbol/currency code of quote pair, eg. ETH                                                             |
 | last_price                  | Last transacted price of base currency based on given quote currency                                    |
 | base_volume                 | 24 hour trading volume in BASE currency                                                                 |
@@ -49,7 +49,7 @@ Endpoint provides a summary of every single contract traded on the exchange. Des
 | next_funding_rate_timestamp | Timestamp of the next funding rate change                                                               |
 | open_interest_usd           | The sum of the Open Positions (long or short) in USD Value of the contract                              |
 
-- Response Body:
+- Example Response:
 
 ```json
 [
@@ -115,22 +115,22 @@ Endpoint provides a summary of every single contract traded on the exchange. Des
 Provide order book information with at least depth = 100 (50 each side) returned for a given market pair/ticker
 
 #### Parameters
-- ticker_id(optional)
+- ticker_id (optional)
    Example : /ETH-PERP
-### Response
+#### Response
 
-- Response Parameter
+- Response Body Fields
 
 | Name                        | Description                                                                                             |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
 | timestamp| Unix timestamp in milliseconds for when the last updated time occurred. |
-| ticker_id | A pair such as "BTC-PERPUSD", with delimiter between different cryptoassets |
-| bids | An array containing 2 elements. The offer price and quantity fyor each bid order
+| ticker_id | A pair such as "BTC-PERP", with delimiter between different cryptoassets |
+| bids | An array containing 2 elements. The offer price and quantity for each bid order
 | asks | An array containing 2 elements. The ask price and quantity for each ask order
 
 
 
-- Response Body:
+- Exmaple Response:
 
 ```json
 {
