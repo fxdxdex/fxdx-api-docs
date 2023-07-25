@@ -27,19 +27,16 @@ No query or route parameters
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
 | ticker_id                   | Identifier of a ticker with delimiter to separate base/quote, eg. BTC-PERP, ETH-PERP |
 | base_currency               | Symbol/currency code of base pair, eg. BTC                                                              |
+| target_currency              | Symbol/currency code of quote pair, eg. ETH                                                             |
 | product_type                | Type of derivative                                                                                      |
 | index_name                  | Name of the index asset                                                                                 |
 | index_currency              | Index currency used to price the asset                                                                  |
 | start_timestamp             | Start date of derivative                                                                                  |
 | contract_type               | Describes the type of contract - Vanilla, Inverse or Quanto                                           |
 | contract_price_currency     | Describes the currency which the contract is priced in (e.g. USDT)                       |
-| target_currency              | Symbol/currency code of quote pair, eg. ETH                                                             |
 | last_price                  | Last transacted price of base currency based on given quote currency                                    |
 | base_volume                 | 24 hour trading volume in BASE currency                                                                 |
-| USD_volume                  | 24 hour trading volume in USD                                                                           |
 | target_volume                | 24 hour trading volume in QUOTE currency                                                                |
-| bid                         | Current highest bid price                                                                               |
-| ask                         | Current lowest ask price                                                                                |
 | high                        | Rolling 24-hour highest transaction price                                                               |
 | low                         | Rolling 24-hour lowest transaction price                                                                |
 | open_interest               | The number of outstanding derivatives contracts that have not been settled                              |
@@ -48,64 +45,55 @@ No query or route parameters
 | funding_rate                | Current funding rate                                                                                    |
 | next_funding_rate           | Upcoming predicted funding rate                                                                         |
 | next_funding_rate_timestamp | Timestamp of the next funding rate change                                                               |
-| open_interest_usd           | The sum of the Open Positions (long or short) in USD Value of the contract                              |
 
 - Example Response:
 
 ```json
 [
-  {
-    "ticker_id": "BTC-PERP",
-    "base_currency": "BTC",
-    "product_type": "Perpetual",
-    "index_name": "BTC",
-    "index_currency": "USDT",
-    "start_timestamp": 1684497600,
-    "contract_type": "Inverse",
-    "contract_price_currency": "USDT",
-    "target_currency": "USDT",
-    "last_price": 29866.981333333337,
-    "base_volume": "0.00000000",
-    "USD_volume": "0.0",
-    "target_volume": "0.0",
-    "bid": "29730.806764864859677701639425572732",
-    "ask": "27281.0",
-    "high": "30052.844473684213163050129296457728",
-    "low": "29741.995853647680330253733298438144",
-    "open_interest": "0.0",
-    "index_price": 29866.981333333337,
-    "end_timestamp": 1690006672,
-    "funding_rate": "0.0",
-    "next_funding_rate": "0.0",
-    "next_funding_rate_timestamp": 1690010272,
-    "open_interest_usd": "0.0"
-  },
-  {
-    "ticker_id": "ETH-PERP",
-    "base_currency": "ETH",
-    "product_type": "Perpetual",
-    "index_name": "ETH",
-    "index_currency": "USDT",
-    "start_timestamp": 1684497600,
-    "contract_type": "Inverse",
-    "contract_price_currency": "USDT",
-    "quote_currency": "USDT",
-    "last_price": 1892.1208536585366,
-    "base_volume": "0.000000000000000000",
-    "USD_volume": "0.0",
-    "target_volume": "0.0",
-    "bid": "1896.715479999999882145528384386498",
-    "ask": "1884.983162820512903769804138438721",
-    "high": "1905.200416666666551407246959443968",
-    "low": "1884.82716981132105149378491056128",
-    "open_interest": "323.551284239999995905474399960063",
-    "index_price": 1892.1278048780487,
-    "end_timestamp": 1690006672,
-    "funding_rate": "0.0",
-    "next_funding_rate": "0.0",
-    "next_funding_rate_timestamp": 1690010273,
-    "open_interest_usd": "323.551284239999995905474399960063"
-  }
+    {
+        "ticker_id": "BTC-PERP",
+        "base_currency": "BTC",
+        "target_currency": "USDT",
+        "product_type": "Perpetual",
+        "index_name": "BTC",
+        "index_currency": "USDT",
+        "start_timestamp": 1684497600,
+        "contract_type": "Inverse",
+        "contract_price_currency": "USDT",
+        "last_price": 29139.89878048781,
+        "base_volume": "0.0",
+        "target_volume": "0.0",
+        "high": "29866.61512499999947244013275316224",
+        "low": "28889.035416666666861289032273362944",
+        "open_interest": "0.0",
+        "index_price": 29139.89878048781,
+        "end_timestamp": 1690266871,
+        "funding_rate": "0.0",
+        "next_funding_rate": "0.0",
+        "next_funding_rate_timestamp": 1690270471
+    },
+    {
+        "ticker_id": "ETH-PERP",
+        "base_currency": "ETH",
+        "target_currency": "USDT",
+        "product_type": "Perpetual",
+        "index_name": "ETH",
+        "index_currency": "USDT",
+        "start_timestamp": 1684497600,
+        "contract_type": "Inverse",
+        "contract_price_currency": "USDT",
+        "last_price": 1851.757790697658,
+        "base_volume": "7478.257499999999999994574279158992",
+        "target_volume": "7478.257499999999999994574279158992",
+        "high": "1877.231707317073258859123605241856",
+        "low": "1835.114795918367247717477229002752",
+        "open_interest": "323.551284239999995905474399960063",
+        "index_price": 1851.757790697658,
+        "end_timestamp": 1690266871,
+        "funding_rate": "0.0",
+        "next_funding_rate": "0.0",
+        "next_funding_rate_timestamp": 1690270472
+    }
 ]
 ```
 
